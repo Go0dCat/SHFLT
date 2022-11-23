@@ -1,0 +1,137 @@
+//base colors
+$color-primary: rgba(124, 43, 43, 1);
+$color-primary-light: rgb(168, 81, 81);
+$color-primary-dark: rgb(83, 23, 23);
+$color-secondary: rgba(106, 126, 56, 1);
+$color-secondary-light: rgb(149, 172, 94);
+$color-secondary-dark: rgb(73, 90, 29);
+$color-black: black;
+$color-white: rgb(247, 235, 235);
+$color-gray-light: rgb(255, 247, 244);
+$color-gray-dark: rgb(41, 41, 41);
+$color-neutral-light: rgba(191, 165, 163, 1);
+$color-neutral-dark: rgba(137, 114, 111, 1);
+$styling-dropshadow: 0.1em 0.25em 0.25em rgba(0, 0, 0, 0.25);
+$styling-drophighlight: -0.1em -0.25em 0.25em rgb(255, 255, 255, 0.25);
+$styling-innershadow: -0.1em -0.25em 0.25em rgba(0, 0, 0, 0.25);
+$styling-innerhighlight: 0.1em 0.25em 0.25em rgb(255, 255, 255, 0.25);
+$styling-concavegradient: 135deg;
+$styling-convexgradient: -45deg;
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    display:grid;
+    grid-template-columns: 1fr 5fr;
+  }
+
+  /*
+ * Stylesheet for Chess app frontend
+ *
+ * tags, classes and id:s are sorted alphabetically, and nested when appropriate
+ */
+
+ body {
+    margin: 0;
+    padding: 0;
+    width: 100vb;
+    min-height: 100vh;
+    color: $color-black;
+    background-color: $color-gray-light;
+
+    .dropshadow {
+        box-shadow: $styling-dropshadow,
+                    $styling-drophighlight;    
+    }
+
+    .innershadow {
+        box-shadow: inset $styling-dropshadow,
+                    inset $styling-drophighlight;   
+    }
+    
+    .innerglow {
+        box-shadow: $styling-innershadow,
+                    $styling-innerhighlight,
+                    inset $styling-drophighlight,
+                    inset $styling-dropshadow;   
+    }
+
+    .dropglow {
+        box-shadow: $styling-dropshadow,
+                    $styling-drophighlight,
+                    inset $styling-innershadow,
+                    inset $styling-innerhighlight; 
+    }
+
+    .background-color-primary {
+        background:linear-gradient($styling-convexgradient, $color-primary-light, $color-primary-dark);
+    }
+    .background-color-secondary {
+        background:linear-gradient($styling-convexgradient, $color-secondary-light, $color-secondary-dark);
+    }
+    .background-color-neutral {
+        background:linear-gradient($styling-convexgradient, $color-neutral-light, $color-neutral-dark);
+    }
+    .background-color-nocolor {
+        background:linear-gradient($styling-convexgradient, $color-gray-light, $color-gray-dark);
+    }
+}
+
+button {
+    background:linear-gradient(styling-convexgradient);
+}
+
+.chess-grid {
+    border-style: solid;
+    border-color: white;
+    font-weight: bold;
+    text-align: center;
+    display: inline-grid;
+    width: 400px;
+    height: 400px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+    .chess-cell {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.custom-button {
+    color: $color-white;
+    display:inline-block;
+    @extend .dropshadow;
+
+    &:hover {
+        @extend .innershadow
+    };
+}
+  
+.custom-header {
+    border-radius: 2em;
+    height:25px;
+    margin:2em;
+    padding:2em;
+    display:inline-block;
+    width: 100px;
+    background: linear-gradient(testgradient);
+    color: $color-white;
+    text-align: center;
+  
+    a {
+        color: $color-white;
+    }
+  }
+
+  .wrapper {
+    display: grid;
+  }
+
+
+  
+@media screen and (max-width: 800px) { }
