@@ -6,9 +6,10 @@ $color-secondary: rgba(106, 126, 56, 1);
 $color-secondary-light: rgb(149, 172, 94);
 $color-secondary-dark: rgb(73, 90, 29);
 $color-black: black;
-$color-white: rgb(247, 235, 235);
+$color-white: white;
 $color-gray-light: rgb(255, 247, 244);
 $color-gray-dark: rgb(41, 41, 41);
+$color-neutral: rgb(151, 133, 132);
 $color-neutral-light: rgba(191, 165, 163, 1);
 $color-neutral-dark: rgba(137, 114, 111, 1);
 $styling-dropshadow: 0.1em 0.25em 0.25em rgba(0, 0, 0, 0.25);
@@ -39,7 +40,7 @@ $styling-convexgradient: -45deg;
     width: 100vb;
     min-height: 100vh;
     color: $color-black;
-    background-color: $color-gray-light;
+    background-color: $color-white;
 
     .dropshadow {
         box-shadow: $styling-dropshadow,

@@ -4,6 +4,9 @@ var cors = require('cors');
 
 const config =  require('../config');
 
+//start local db from cmd:
+//"C:\Program Files\MongoDB\Server\6.0\bin\mongod.exe" --dbpath="c:\data\db"
+
 const app = express();
 app.use(express.json())
 
@@ -16,7 +19,7 @@ mongoose.connect(config.CONNECTION, {
 });
 
 const db = mongoose.connection;
-db.on('error', (error) => {console.log("yo"); console.error(error)});
+db.on('error', (error) =>  console.error(error));
 db.once('open', () => console.log('Connected to db'));
 
 //frontend
